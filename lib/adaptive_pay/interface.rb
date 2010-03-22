@@ -34,7 +34,7 @@ module AdaptivePay
       if config["retain_requests_for_test"] == true
         @retain_requests_for_test = true
       else
-        set_environment config.delete("environment")
+        set_environment config.delete("instance")
         config.each do |k, v|
           send "#{k}=", v
         end
