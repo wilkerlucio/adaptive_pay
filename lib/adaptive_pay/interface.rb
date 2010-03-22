@@ -79,6 +79,12 @@ module AdaptivePay
       yield request
       perform request
     end
+    
+    def request_ipn_validation(request_body)
+      request = IpnValidationRequest.new request_body
+      
+      perform request
+    end
 
     def perform(request)
       if retain_requests_for_test?

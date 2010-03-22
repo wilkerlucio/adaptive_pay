@@ -141,6 +141,22 @@ else
   response.errors
 end
 
+Validating IPN Requests
+-----------------------
+
+In order to check if the IPN request is valid you can use the IPN Validation Request
+
+interface = AdaptivePay::Interface.new
+response = interface.request_ipn_validation(request.env["rack.request.form_vars"])
+
+if response == "VERIFIED"
+  # its valid
+else
+  # go you cracker...
+end
+
+The param received by request_ipn_validation should be the raw body of post request (needs to keep same order and values), so
+the request.env["rack.request.form_vars"] is available on controller in the request.
 
 Object based calls
 -----------------

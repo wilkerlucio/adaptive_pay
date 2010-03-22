@@ -1,6 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/adaptive_pay/interface')
 require File.expand_path(File.dirname(__FILE__) + '/adaptive_pay/request')
 require File.expand_path(File.dirname(__FILE__) + '/adaptive_pay/abstract_payment_request')
+require File.expand_path(File.dirname(__FILE__) + '/adaptive_pay/ipn_validation_request')
 require File.expand_path(File.dirname(__FILE__) + '/adaptive_pay/preapproval_request')
 require File.expand_path(File.dirname(__FILE__) + '/adaptive_pay/preapproval_details_request')
 require File.expand_path(File.dirname(__FILE__) + '/adaptive_pay/payment_request')
