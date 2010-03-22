@@ -46,8 +46,11 @@ module AdaptivePay
     end
 
     def method_missing(name, *args)
-      if @attributes.has_key?(name.to_s.camelize(:lower))
-        @attributes[name.to_s.camelize(:lower)]
+      attribute = name.to_s.camelize
+      attribute[0] = attribute.first.downcase
+
+      if @attributes.has_key?(attribute)
+        @attributes[attribute]
       else
         super
       end
