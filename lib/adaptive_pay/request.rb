@@ -48,7 +48,7 @@ module AdaptivePay
       when attrib.nil?
         nil
       when attrib[:format] == :date
-        @attributes[name].strftime("%Y-%m-%d")
+        @attributes[name].respond_to?(:strftime) ? @attributes[name].strftime("%Y-%m-%d") : @attributes[name]
       else
         @attributes[name]
       end
