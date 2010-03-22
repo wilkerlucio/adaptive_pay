@@ -16,16 +16,18 @@ module AdaptivePay
       !@success
     end
 
-
     def created?
+      return false unless @attributes.has_key? "paymentExecStatus"
       payment_exec_status == "CREATED"
     end
 
     def pending?
+      return false unless @attributes.has_key? "paymentExecStatus"
       payment_exec_status == "PENDING"
     end
 
     def completed?
+      return false unless @attributes.has_key? "paymentExecStatus"
       payment_exec_status == "COMPLETED"
     end
 
